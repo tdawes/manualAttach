@@ -61,8 +61,10 @@ function DetectionHandler:delete(): ()
     end
 
     if self.triggerCloneNode ~= nil then
+        if entityExists(self.triggerCloneNode) then
+            delete(self.triggerCloneNode)
+        end
         self.triggerCloneNode = nil
-        delete(self.triggerCloneNode)
     end
 end
 
